@@ -29,7 +29,7 @@ double getY(double x, double delta)
 
 	for (int i = 3; abs(last) > delta ; i+=2)
 	{
-		last = -1 * last * 2 * 2 * x * x / ((i - 1) * i);
+		last = - last * 2 * 2 * x * x / ((i - 1) * i);
 		result += last;
 	}
 
@@ -52,7 +52,7 @@ void calculation(double x0, double xk, double h, double delta)
 	cout.width(20); cout << "w" << endl;
 
 	int i = 0;
-	while (x0 <= xk)
+	while (x0 <= xk + h/2)
 	{
 		double y = getY(x0, delta);
 		double z = sin(2*x0);
@@ -67,7 +67,7 @@ void calculation(double x0, double xk, double h, double delta)
 int main(int argc, char* argv[])
 {
 	double x0 = - M_PI / 4;
-	double xk = (-1) * x0;
+	double xk = -x0;
 	double h = M_PI / 20;
 
 	cout << "e = 0.001" << endl;
