@@ -19,7 +19,7 @@ double getF(double x)
 
 double myMin(double a, double b, double c)
 {
-    return a > b ? (b > c ? c : b) : a > c ? c : a;
+    return a > b ? b > c ? c : b : a > c ? c : a;
 }
 
 void printResult(char* method, int N, int It, double xMin, double y)
@@ -55,66 +55,51 @@ void generalSearch(double a, double b, double e)
     printResult("General Search", fcounter-1, fcounter, xMin, min);
 }
 
-void bisectionSearch(double a, double b, double e) //DOTO
+void bisectionSearch(double a, double b, double e)
 {
     unsigned int counter = 0;
     unsigned int fcounter = 0;
 
-    std::pair left(a, getF(a)); fcounter++;
-    std::pair right(b, getF(b)); fcounter++;
+    pair<double, double> left(a, getF(a)); fcounter++;
+    pair<double, double> right(b, getF(b)); fcounter++;
 
-    double D = right.x - left.x;
+    double D = right.first - left.first;
+    pair<double, double> central((right.first + left.first)*0.5,
+                                 getF((right.first + left.second)*0.5)); fcounter++;
 
+    while (abs(D) > e)
+    {
+        pair<double, double> leftIntervalCenter((central.first + left.first) * 0.5,
+                                                getF((central.first + left.first) * 0.5)); fcounter++;
 
-//    double left = a;
-//    double right = b;
-//    double leftY = getF(left); fcounter++;
-//    double rightY = getF(right); fcounter++;
-//    double interval = right - left;
+        pair<double, double> rightIntervalCenter((right.first + central.first) * 0.5,
+                                                getF((right.first + central.first) * 0.5)); fcounter++;
 
-//    double xMin, min, x3, x4, x5, y3, y4, y5;
+        double m = myMin(leftIntervalCenter.second, central.second, rightIntervalCenter.second);
+        if (m == leftIntervalCenter.second)
+        {
+            right = central;
+            central = leftIntervalCenter;
+            left = left;
+        }
+        else if (m == central.second)
+        {
+            central = central;
+            left = leftIntervalCenter;
+            right = rightIntervalCenter;
+        }
+        else if (m == rightIntervalCenter.second)
+        {
+            left = central;
+            central = rightIntervalCenter;
+            right = right;
+        }
 
-//    while(interval > e)
-//    {
-//        x3 = (left + right) * 0.5;
+        D = right.first - left.first;
+        counter++;
+    }
 
-//        x4 = (left + x3) * 0.5;
-//        x5 = right - x3 * 0.5;
-
-//        y3 = getF(x3); fcounter++;
-//        y4 = getF(x4); fcounter++;
-//        y5 = getF(x5); fcounter++;
-
-//        double m = myMin(y3,y4,y5);
-
-//        if (m == y3) {
-//            min = y3;
-//            xMin = x3;
-//            left = x4;
-//            leftY = y4;
-//            right = x5;
-//            rightY = x5;
-//        }
-//        else if (m == y4) {
-//            min = y4;
-//            xMin = x4;
-//            left = left;
-//            right = x3;
-//            rightY = y3;
-//        }
-//        else if (m == y5) {
-//            min = y5;
-//            xMin = x5;
-//            left = x3;
-//            leftY = y3;
-//            right = right;
-//        }
-
-//        interval = right - left;
-//        counter++;
-//    }
-
-    printResult("Bisection Search", counter, fcounter, xMin, min);
+    printResult("Bisection Search", counter, fcounter, central.first, central.second);
 }
 
 void goldenSectionSearch(double a, double b, double e)
