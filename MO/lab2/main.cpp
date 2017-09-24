@@ -11,9 +11,13 @@
 using namespace std;
 
 #define M_E 2.71828182845904523536
+typedef pair<double, double> POINT;
+
+int fcounter = 0;
 
 double getF(double x)
 {
+    fcounter++;
     return sqrt(1 + x*x) + pow(M_E,-2*x);
 }
 
@@ -24,56 +28,48 @@ double myMin(double a, double b, double c)
 
 void printResult(char* method, int N, int It, double xMin, double y)
 {
-    static bool f = false;
-
-    if(!f)
-    {
-        printf ("%-25s %-10s %-10s %-10s %-10s\n\n", "Method", "N", "Iteration", "xMin", "f(xMin)");
-        f = true;
-    }
-
     printf ("%-25s %-10i %-10i %-10f %-10f\n", method, N, It, xMin, y);
 }
 
 void generalSearch(double a, double b, double e)
 {
-    int fcounter = 0;
-    double min = 10000.0;
-    double xMin;
+    fcounter = 0;
+    POINT min(-1.0,1000.0);
     for (double i = a; i < b + e / 2; i+= e)
     {
         double y = getF(i);
 
-        if (y < min)
+        if (y < min.second)
         {
-            min = y;
-            xMin = i;
+            min.second = y;
+            min.first = i;
         }
-        fcounter++;
     }
 
-    printResult("General Search", fcounter-1, fcounter, xMin, min);
+    printResult(__FUNCTION__, fcounter-1, fcounter, min.first, min.second);
 }
 
 void bisectionSearch(double a, double b, double e)
 {
     unsigned int counter = 0;
-    unsigned int fcounter = 0;
+    fcounter = 0;
 
-    pair<double, double> left(a, getF(a)); fcounter++;
-    pair<double, double> right(b, getF(b)); fcounter++;
+    POINT left(a, getF(a));
+    POINT right(b, getF(b));
 
     double D = right.first - left.first;
-    pair<double, double> central((right.first + left.first)*0.5,
-                                 getF((right.first + left.second)*0.5)); fcounter++;
+    POINT central;
+    central.first = (right.first + left.first) * 0.5;
+    central.second = getF(central.first);
 
     while (abs(D) > e)
     {
-        pair<double, double> leftIntervalCenter((central.first + left.first) * 0.5,
-                                                getF((central.first + left.first) * 0.5)); fcounter++;
-
-        pair<double, double> rightIntervalCenter((right.first + central.first) * 0.5,
-                                                getF((right.first + central.first) * 0.5)); fcounter++;
+        POINT leftIntervalCenter;
+        POINT rightIntervalCenter;
+        leftIntervalCenter.first = (central.first + left.first) * 0.5;
+        rightIntervalCenter.first = (right.first + central.first) * 0.5;
+        leftIntervalCenter.second = getF(leftIntervalCenter.first);
+        rightIntervalCenter.second = getF(rightIntervalCenter.first);
 
         double m = myMin(leftIntervalCenter.second, central.second, rightIntervalCenter.second);
         if (m == leftIntervalCenter.second)
@@ -99,16 +95,51 @@ void bisectionSearch(double a, double b, double e)
         counter++;
     }
 
-    printResult("Bisection Search", counter, fcounter, central.first, central.second);
+    printResult(__FUNCTION__, counter, fcounter, central.first, central.second);
 }
 
 void goldenSectionSearch(double a, double b, double e)
 {
     unsigned int counter = 0;
-    unsigned int fcounter = 0;
-    double xMin, min;
+    fcounter = 0;
+    double fi = 1 / ((sqrt(5) + 1) * 0.5);
 
-    printResult("Golden Section Search", counter, fcounter, xMin, min);
+    POINT left(a, getF(a));
+    POINT right(b, getF(b));
+    POINT p3, p4, min;
+
+    p3.first = right.first - fi * (right.first - left.first);
+    p3.second = getF(p3.first);
+    p4.first = left.first + fi * (right.first - left.first);
+    p4.second = getF(p4.first);
+
+    while (abs(right.first - left.first) > e)
+    {
+        if(p3.second < p4.second)
+        {
+            right = p4;
+            p4 = p3;
+            p3.first = right.first - fi * (right.first - left.first);
+            p3.second = getF(p3.first);
+            min = p3;
+        }
+        else
+        {
+            left = p3;
+            p3 = p4;
+            p4.first = left.first + fi * (right.first - left.first);
+            p4.second = getF(p4.first);
+            min = p4;
+        }
+        counter++;
+    }
+
+    if(left.second < min.second)
+        min = left;
+    else if(right.second < min.second)
+        min = right;
+
+    printResult(__FUNCTION__, counter, fcounter, min.first, min.second);
 }
 
 int main()
@@ -116,6 +147,8 @@ int main()
     double a = 0.;
     double b = 1.;
     double e = .00001;
+
+    printf ("%-25s %-10s %-10s %-10s %-10s\n\n", "Method", "It", "N", "xMin", "f(xMin)");
 
     generalSearch(a,b,e);
     bisectionSearch(a,b,e);
