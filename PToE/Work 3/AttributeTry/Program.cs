@@ -11,7 +11,8 @@ namespace AttributeTry
         static void Main(string[] args)
         {
             Loader loader = new Loader();
-            loader.load();
+            Console.WriteLine("File size: {0} bytes.",loader.load());
+            Console.ReadLine();
         }
     }
 }
