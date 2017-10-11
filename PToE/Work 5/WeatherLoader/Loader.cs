@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net;
-using System.IO;
+﻿using System.Net;
 
 namespace WeatherLoader
 {
@@ -10,7 +8,7 @@ namespace WeatherLoader
 
         public Loader()
         {
-            url = "http://termo.tomsk.ru/data.txt";
+            url = "http://termo.tomsk.ru/data.json";
         }
 
         public Loader(string _url)

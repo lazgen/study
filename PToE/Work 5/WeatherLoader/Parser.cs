@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//using System.Runtime.Serialization;
+using System.Web.Script.Serialization;
 
 namespace WeatherLoader
 {
@@ -11,11 +7,9 @@ namespace WeatherLoader
     {
         public WeatherInfo parse(string info)
         {
-
-            //DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(WeatherInfo));
-            WeatherInfo weather = (WeatherInfo)serializer.ReadObject(info);
-
-            return new WeatherInfo();
+            WeatherInfo weather = new JavaScriptSerializer().Deserialize<WeatherInfo>(info);
+            Console.WriteLine("{0} {1} {2} {3}", weather.current_date, weather.current_time, weather.current_temp, weather.description);
+            return weather;
         }
     }
 }
