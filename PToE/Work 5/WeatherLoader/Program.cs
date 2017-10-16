@@ -13,7 +13,7 @@ namespace WeatherLoader
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Facade());
+            Application.Run(new UIForm());
         }
     }
 }

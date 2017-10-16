@@ -1,6 +1,6 @@
 ﻿namespace WeatherLoader
 {
-    class WeatherInfo
+    struct WeatherInfo
     {
         public string current_temp { get; set; }
         public string current_temp_change { get; set; }

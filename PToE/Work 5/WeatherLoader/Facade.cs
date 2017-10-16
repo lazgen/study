@@ -1,32 +1,19 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace WeatherLoader
+﻿namespace WeatherLoader
 {
-    public partial class Facade : Form
+    class Facade : IFacade
     {
-        Loader loader = new Loader();
-        Parser parser = new Parser();
-        WeatherInfo weather = new WeatherInfo();
+        private Loader loader = new Loader();
+        private Parser parser = new Parser();
+        private WeatherInfo weather = new WeatherInfo();
 
-        public Facade()
-        {
-            InitializeComponent();
-        }
-
-        private void updateWeather()
+        public void updateWeatherInfo()
         {
             weather = parser.parse(loader.load());
-
-            label4.Text = weather.description;
-            label5.Text = weather.current_date;
-            label8.Text = weather.current_time;
-            label6.Text = weather.current_temp;
         }
 
-        private void updateButton_Click(object sender, EventArgs e)
+        public WeatherInfo weatherInfo
         {
-            updateWeather();
+            get { return weather; }
         }
     }
 }
