@@ -1,5 +1,4 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
 namespace WeatherLoader
 {
@@ -18,7 +17,7 @@ namespace WeatherLoader
             weather.temp = (string)o["main"]["temp"];
             weather.pressure = (string)o["main"]["pressure"];
             weather.humidity = (string)o["main"]["humidity"];
-            weather.description = (string)o["weather"][0]["main"] + ": " + (string)o["weather"][0]["main"];
+            weather.description = (string)o["weather"][0]["main"] + ": " + (string)o["weather"][0]["description"];
 
             return weather;
         }
