@@ -4,25 +4,33 @@ namespace WeatherLoader
 {
     public class Loader
     {
-        public string url { get; set; }
+        public string apiUrl { get; set; }
+        public string town { get; set; }
+        public string appId { get; set; }
 
         public Loader()
         {
-            url = "http://termo.tomsk.ru/data.json";
-        }
-
-        public Loader(string _url)
-        {
-            url = _url;
+            apiUrl = "http://api.openweathermap.org/data/2.5/weather";
+            town = "Kaliningrad";
+            appId = "b52d72130fc650758b4ce9ff2dd3dd03";
         }
 
         public string load()
         {
-            if (url.Length == 0)
+            if (apiUrl.Length == 0)
                 return "";
 
+            string url = string.Format("{0}?q={1}&appid={2}&units=metric",apiUrl,town,appId);
+
             WebClient webClient = new WebClient();
-            return webClient.DownloadString(url);
+            try
+            {
+                return webClient.DownloadString(url);
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 }
