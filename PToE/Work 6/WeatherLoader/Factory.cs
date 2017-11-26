@@ -11,14 +11,28 @@ namespace WeatherLoader
         private IFacade openweathermap = new Facade();
         private IFacade apixu = new Facade1();
 
-        public IFacade getOpenweathermap()
+        private List<IFacade> m_services = new List<IFacade>();
+        private List<string> m_names = new List<string>();
+
+        public Factory()
         {
-            return openweathermap;
+            m_services.Add(openweathermap);
+            m_services.Add(apixu);
+
+            m_names.Add("Open Weather Map");
+            m_names.Add("Apixu");
         }
 
-        public IFacade getApixu()
+        public List<string> services()
         {
-            return apixu;
+            //Dictionary<string, IFacade>.KeyCollection keyColl = m_services.Keys;
+            //return keyColl.ToList<string>();
+            return m_names;
+        }
+
+        public IFacade getService(int index)
+        {
+            return m_services[index];
         }
     }
 }

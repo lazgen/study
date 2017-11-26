@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WeatherLoader
@@ -10,18 +11,18 @@ namespace WeatherLoader
         public UIForm()
         {
             InitializeComponent();
-            comboBox1.Items.Insert(0, "Open Weather Map");
-            comboBox1.Items.Insert(1, "Apixu");
+            List<string> services = factory.services();
+            for (int i = 0; i < services.Count; i++) 
+            {
+                comboBox1.Items.Insert(i, services[i]);
+            }
+
             comboBox1.SelectedIndex = 0;
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            WeatherInfo weather;
-            if (comboBox1.SelectedIndex == 0)
-                weather = factory.getOpenweathermap().updateWeatherInfo(textBox1.Text);
-            else
-                weather = factory.getApixu().updateWeatherInfo(textBox1.Text);
+            WeatherInfo weather = factory.getService(comboBox1.SelectedIndex).updateWeatherInfo(textBox1.Text);
 
             textBox1.Text = weather.town;
             label4.Text = weather.description;
