@@ -8,14 +8,14 @@ namespace WeatherLoader
 {
     class Factory
     {
-        private IFacade openweathermap = new Facade();
-        private IFacade apixu = new Facade1();
-
         private List<IFacade> m_services = new List<IFacade>();
         private List<string> m_names = new List<string>();
 
         public Factory()
         {
+            IFacade openweathermap = new Facade();
+            IFacade apixu = new Facade1();
+
             m_services.Add(openweathermap);
             m_services.Add(apixu);
 
@@ -25,8 +25,6 @@ namespace WeatherLoader
 
         public List<string> services()
         {
-            //Dictionary<string, IFacade>.KeyCollection keyColl = m_services.Keys;
-            //return keyColl.ToList<string>();
             return m_names;
         }
 
