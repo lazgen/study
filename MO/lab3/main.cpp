@@ -39,13 +39,13 @@ double getF(double x)
 double firstDerive(double x)
 {
     firstDeriveCounter++;
-    return 2 / log(2) + 4 * x;
+    return (x / sqrt(1+ x*x)) - 2 * exp(-2 * x);
 }
 
 double secondDerive(double x)
 {
     secondDeriveCounter++;
-    return 4;
+    return (1 / pow(sqrt(1 + x*x),3)) + 4 * exp(-2 * x);
 }
 
 double newtonNextStep(double xk)
@@ -85,13 +85,13 @@ void newtonRaphson(double xk, double e)
     print("Newton-Raphson", xkNext, ykNext, iteration);
 }
 
-double firstDeriveAppr(double x, double h)
+double firstDeriveApprox(double x, double h)
 {
     firstDeriveCounter++;
     return (getF(x + h) - getF(x - h)) / (2 * h);
 }
 
-double secondDeriveAppr(double x, double h)
+double secondDeriveApprox(double x, double h)
 {
     secondDeriveCounter++;
     return (getF(x + h) - 2 * getF(x) + getF(x - h)) / (2 * h * h);
@@ -99,7 +99,7 @@ double secondDeriveAppr(double x, double h)
 
 double quasiNextStep(double xk, double h)
 {
-    return xk - firstDeriveAppr(xk, h) / secondDeriveAppr(xk, h);
+    return xk - firstDeriveApprox(xk, h) / secondDeriveApprox(xk, h);
 }
 
 void quasiNewtonian(double xk, double e, double h)
@@ -117,14 +117,14 @@ void quasiNewtonian(double xk, double e, double h)
         xkNext = quasiNextStep(xk, h);
         ykNext = getF(xkNext);
         yk = getF(xk);
-        derYk = firstDeriveAppr(xk, h);
-        //TODO: проверить, как у прошлого года
+        derYk = firstDeriveApprox(xk, h);
+
         if (ykNext > yk && derYk * (xkNext - xk) < 0){
             xkNext = (xkNext + xk) / 2;
             ykNext = getF(xkNext);
         }
 
-        derYkNext = firstDeriveAppr(xkNext, h);
+        derYkNext = firstDeriveApprox(xkNext, h);
         iteration++;
         xk = xkNext;
         xMin = xkNext;
