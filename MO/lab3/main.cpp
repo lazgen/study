@@ -10,13 +10,11 @@
 #include <cmath>
 #include <functional>
 
-#define M_E 2.71828182845904523536
-
 using namespace std;
 
 static int  funcCounter = 0,
-            firstDeriveCounter = 0,
-            secondDeriveCounter = 0;
+            firstDerivativeCounter = 0,
+            secondDerivativeCounter = 0;
 
 void print(const char* method, double xmin, double ymin, int i)
 {
@@ -25,8 +23,8 @@ void print(const char* method, double xmin, double ymin, int i)
     cout.width(20); cout.precision(12); cout << ymin;
     cout.width(15); cout << i;
     cout.width(10); cout << funcCounter;
-    cout.width(10); cout << firstDeriveCounter;
-    cout.width(10); cout << secondDeriveCounter;
+    cout.width(10); cout << firstDerivativeCounter;
+    cout.width(10); cout << secondDerivativeCounter;
     cout << endl;
 }
 
@@ -36,28 +34,28 @@ double getF(double x)
     return sqrt(1 + x*x) + exp(-2*x);
 }
 
-double firstDerive(double x)
+double firstDerivative(double x)
 {
-    firstDeriveCounter++;
+    firstDerivativeCounter++;
     return (x / sqrt(1+ x*x)) - 2 * exp(-2 * x);
 }
 
-double secondDerive(double x)
+double secondDerivative(double x)
 {
-    secondDeriveCounter++;
+    secondDerivativeCounter++;
     return (1 / pow(sqrt(1 + x*x),3)) + 4 * exp(-2 * x);
 }
 
 double newtonNextStep(double xk)
 {
-    return xk - firstDerive(xk) / secondDerive(xk);
+    return xk - firstDerivative(xk) / secondDerivative(xk);
 }
 
 void newtonRaphson(double xk, double e)
 {
     funcCounter = 0;
-    firstDeriveCounter = 0;
-    secondDeriveCounter = 0;
+    firstDerivativeCounter = 0;
+    secondDerivativeCounter = 0;
     double yk, derYk;
     double xkNext, ykNext, derYkNext;
     double xMin, yMin;
@@ -68,14 +66,14 @@ void newtonRaphson(double xk, double e)
         xkNext = newtonNextStep(xk);
         ykNext = getF(xkNext);
         yk = getF(xk);
-        derYk = firstDerive(xk);
+        derYk = firstDerivative(xk);
 
         if (ykNext > yk && derYk * (xkNext - xk) < 0){
             xkNext = (xkNext + xk) / 2;
             ykNext = getF(xkNext);
         }
 
-        derYkNext = firstDerive(xkNext);
+        derYkNext = firstDerivative(xkNext);
         iteration++;
         xk = xkNext;
         xMin = xkNext;
@@ -85,28 +83,28 @@ void newtonRaphson(double xk, double e)
     print("Newton-Raphson", xkNext, ykNext, iteration);
 }
 
-double firstDeriveApprox(double x, double h)
+double firstDerivativeApprox(double x, double h)
 {
-    firstDeriveCounter++;
+    firstDerivativeCounter++;
     return (getF(x + h) - getF(x - h)) / (2 * h);
 }
 
-double secondDeriveApprox(double x, double h)
+double secondDerivativeApprox(double x, double h)
 {
-    secondDeriveCounter++;
+    secondDerivativeCounter++;
     return (getF(x + h) - 2 * getF(x) + getF(x - h)) / (2 * h * h);
 }
 
 double quasiNextStep(double xk, double h)
 {
-    return xk - firstDeriveApprox(xk, h) / secondDeriveApprox(xk, h);
+    return xk - firstDerivativeApprox(xk, h) / secondDerivativeApprox(xk, h);
 }
 
 void quasiNewtonian(double xk, double e, double h)
 {
     funcCounter = 0;
-    firstDeriveCounter = 0;
-    secondDeriveCounter = 0;
+    firstDerivativeCounter = 0;
+    secondDerivativeCounter = 0;
     double yk, derYk;
     double xkNext, ykNext, derYkNext;
     double xMin, yMin;
@@ -117,14 +115,14 @@ void quasiNewtonian(double xk, double e, double h)
         xkNext = quasiNextStep(xk, h);
         ykNext = getF(xkNext);
         yk = getF(xk);
-        derYk = firstDeriveApprox(xk, h);
+        derYk = firstDerivativeApprox(xk, h);
 
         if (ykNext > yk && derYk * (xkNext - xk) < 0){
             xkNext = (xkNext + xk) / 2;
             ykNext = getF(xkNext);
         }
 
-        derYkNext = firstDeriveApprox(xkNext, h);
+        derYkNext = firstDerivativeApprox(xkNext, h);
         iteration++;
         xk = xkNext;
         xMin = xkNext;
