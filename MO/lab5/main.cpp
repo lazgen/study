@@ -14,6 +14,7 @@
 using namespace std;
 
 static int  funcCounter = 0,
+            gradDesCounter = 0,
             derivative1Counter = 0;
 
 void print(const char* method, double ymin, vector<double> x, int i)
@@ -23,6 +24,7 @@ void print(const char* method, double ymin, vector<double> x, int i)
     cout.width(15); cout.precision(12); cout << x[1];
     cout.width(20); cout.precision(12); cout << ymin;
     cout.width(10); cout << i;
+    cout.width(10); cout << gradDesCounter;
     cout.width(10); cout << funcCounter;
     cout.width(10); cout << derivative1Counter ;
     cout << endl;
@@ -113,6 +115,7 @@ vector<double> gradientDescentMethod(const vector<double> &xVector, double e, do
     vector<double> next = xVector;
     vector<double> gradient = penaltyGradient(next[0], next[1], r);
     do {
+        gradDesCounter++;
         next = penaltyNextXVector(next, gradient, lambda);
         gradient = penaltyGradient(next[0], next[1], r);
     } while (norma(gradient) + e * 0.5 >= e);
@@ -123,6 +126,7 @@ void barrierFunctions(double e)
 {
     derivative1Counter = 0;
     funcCounter = 0;
+    gradDesCounter = 0;
 
     int iteration = 0;
     double r = 1;
@@ -195,6 +199,7 @@ vector<double> gradientDescentFactor(const vector<double> &xVector, double e, do
     vector<double> gradient;
     gradient = grad(result[0], result[1], r, sigma);
     while (norma(gradient) > e) {
+        gradDesCounter++;
         result = penaltyNextXVector(result, gradient, lambda);
         gradient = grad(result[0], result[1], r, sigma);
     }
@@ -206,6 +211,7 @@ void FactorsMethod(double e)
 {
     derivative1Counter = 0;
     funcCounter = 0;
+    gradDesCounter = 0;
 
     int it = 0;
     double r = 1;
@@ -250,6 +256,7 @@ int main()
     cout.width(15); cout << "min X2";
     cout.width(20); cout << "min Y";
     cout.width(10); cout << "Iter";
+    cout.width(10); cout << "Iter2";
     cout.width(10); cout << "f(x) N";
     cout.width(10); cout << "f'(x) N" << endl;
 
