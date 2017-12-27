@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>PTOE work 9 popup</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <h1>Images opasity changer</h1>
+    <div id="container">
+      <span>Choose a opasity</span>
+      <select id="dropdown">
+        <option selected disabled hidden value=''></option>
+        <option value=0.0>0%</option>
+        <option value=0.1>10%</option>
+        <option value=0.2>20%</option>
+        <option value=0.3>30%</option>
+        <option value=0.4>40%</option>
+        <option value=0.5>50%</option>
+        <option value=0.6>60%</option>
+        <option value=0.7>70%</option>
+        <option value=0.8>80%</option>
+        <option value=0.9>90%</option>
+        <option value=1.0>100%</option>
+      </select>
+    </div>
+
+    <div id="container2">
+      <input type="checkbox" id="highlightCheckBox">
+      <span>Highlight Urls</span>
+  </body>
+</html>
