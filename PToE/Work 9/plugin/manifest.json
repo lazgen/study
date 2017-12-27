@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "PTOE work 9",
+  "description": "This extension allows the user to change images opacity and counts and highlights external urls.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
