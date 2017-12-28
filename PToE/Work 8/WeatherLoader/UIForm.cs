@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WeatherLoader
@@ -21,11 +20,14 @@ namespace WeatherLoader
         {
             this.Invoke((MethodInvoker)(() =>
             {
-                mainInfoOWM.Text = info.description;
-                tempOWM.Text = info.temp;
-                pressureOWM.Text = info.pressure;
-                humidityOWM.Text = info.humidity;
-                updTimeOWM.Text = DateTime.Now.ToString("dd.MM.yyyy hh:mm");
+                if (info.service == "Open Weather Map")
+                {
+                    mainInfoOWM.Text = info.description;
+                    tempOWM.Text = info.temp;
+                    pressureOWM.Text = info.pressure;
+                    humidityOWM.Text = info.humidity;
+                    updTimeOWM.Text = DateTime.Now.ToString("dd.MM.yyyy hh:mm");
+                }
             }));
         }
 
@@ -33,11 +35,14 @@ namespace WeatherLoader
         {
             this.Invoke((MethodInvoker)(() =>
             {
-                mainInfoApixu.Text = info.description;
-                tempApixu.Text = info.temp;
-                pressureApixu.Text = info.pressure;
-                humidityApixu.Text = info.humidity;
-                updTimeApixu.Text = DateTime.Now.ToString("dd.MM.yyyy hh:mm");
+                if (info.service == "Apixu")
+                {
+                    mainInfoApixu.Text = info.description;
+                    tempApixu.Text = info.temp;
+                    pressureApixu.Text = info.pressure;
+                    humidityApixu.Text = info.humidity;
+                    updTimeApixu.Text = DateTime.Now.ToString("dd.MM.yyyy hh:mm");
+                }
             }));
         }
 
@@ -50,9 +55,9 @@ namespace WeatherLoader
         {
             CheckBox checkBox = (CheckBox)sender;
             if (checkBox.Checked)
-                m_weatherUpdater.OpenWeatherMapWeatherInfoLoaded += updateOpenWeatherMapData;
+                m_weatherUpdater.WeatherInfoLoaded += updateOpenWeatherMapData;
             else
-                m_weatherUpdater.OpenWeatherMapWeatherInfoLoaded -= updateOpenWeatherMapData;
+                m_weatherUpdater.WeatherInfoLoaded -= updateOpenWeatherMapData;
             groupBox1.Enabled = checkBox.Checked;
         }
 
@@ -60,9 +65,9 @@ namespace WeatherLoader
         {
             CheckBox checkBox = (CheckBox)sender;
             if (checkBox.Checked)
-                m_weatherUpdater.ApixuWeatherInfoLoaded += updateApixuData;
+                m_weatherUpdater.WeatherInfoLoaded += updateApixuData;
             else
-                m_weatherUpdater.ApixuWeatherInfoLoaded -= updateApixuData;
+                m_weatherUpdater.WeatherInfoLoaded -= updateApixuData;
             groupBox2.Enabled = checkBox.Checked;
         }
 

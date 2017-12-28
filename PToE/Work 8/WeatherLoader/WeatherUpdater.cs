@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
+﻿using System.Timers;
 
 namespace WeatherLoader
 {
     class WeatherUpdater
     {
-        public delegate void UpdateWeatherInfoDelegate(WeatherInfo weatherInfo);
+        public delegate void WeatherInfoDelegate(WeatherInfo weatherInfo);
 
-        public event UpdateWeatherInfoDelegate OpenWeatherMapWeatherInfoLoaded;
-        public event UpdateWeatherInfoDelegate ApixuWeatherInfoLoaded;
+        public event WeatherInfoDelegate WeatherInfoLoaded;
 
         private Factory m_factory = new Factory();
         private Timer m_timer = new Timer();
@@ -48,10 +42,9 @@ namespace WeatherLoader
             foreach(string service in m_factory.services())
             {
                 WeatherInfo data = m_factory.getServiceByName(service).updateWeatherInfo(m_town);
-                if (service == "Open Weather Map" && OpenWeatherMapWeatherInfoLoaded != null)
-                    OpenWeatherMapWeatherInfoLoaded(data);
-                if (service == "Apixu" && ApixuWeatherInfoLoaded != null)
-                    ApixuWeatherInfoLoaded(data);
+                data.service = service;
+                if (WeatherInfoLoaded != null)
+                    WeatherInfoLoaded(data);
             }
         }
     }
