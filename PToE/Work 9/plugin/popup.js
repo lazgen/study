@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     dropdown.value = 0.5;
     checkbox.checked = true;
-
     changeImagesOpasity(dropdown.value);
     hightlightUrls(true);
 
@@ -57,5 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
       hightlightUrls(checkbox.checked);
     });
 
+
+    chrome.tabs.executeScript({
+        code: 'document.links.length;'
+    },receiveLinks);
+
   });
 });
+
+function receiveLinks(links) {
+    document.getElementById("checkboxText").textContent = "Highlight " + links + " Urls";   
+}
