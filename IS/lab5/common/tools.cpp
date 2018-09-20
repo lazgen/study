@@ -6,25 +6,9 @@
 #include <string>
 #include <algorithm>
 
-uint16_t Tools::getCrc16(const std::vector<uint8_t> &data, int size, int offset)
-{
-    uint16_t CRC = CRC_SSP_SEED;
-    uint8_t val;
+namespace Tools {
 
-    for (auto it = data.begin() + offset; it != (data.begin() + size + offset) && it != data.end(); ++it)
-    {
-        val = *it;
-        CRC ^= val << 8;
-        for (int j = 0; j < 8; j++)
-        {
-            CRC = CRC & 0x8000 ? static_cast<uint16_t>((CRC << 1) ^ CRC_SSP_POLYNOMIAL)
-                               : static_cast<uint16_t>(CRC << 1);
-        }
-    }
-    return CRC;
-}
-
-uint64_t Tools::XpowYmodN(uint64_t x, uint64_t y, uint64_t n)
+uint64_t XpowYmodN(uint64_t x, uint64_t y, uint64_t n)
 {
     uint64_t num = x;
     uint64_t num2 = 1;
@@ -40,7 +24,7 @@ uint64_t Tools::XpowYmodN(uint64_t x, uint64_t y, uint64_t n)
     return num2;
 }
 
-uint32_t Tools::toInt32FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian)
+uint32_t toInt32FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian)
 {
     uint32_t result = 0;
     for (uint32_t i = 0; i < 4; i++)
@@ -50,7 +34,7 @@ uint32_t Tools::toInt32FromBytes(std::vector<uint8_t> bytes, unsigned int startI
     return result;
 }
 
-uint16_t Tools::toInt16FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian)
+uint16_t toInt16FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian)
 {
     uint16_t result = 0;
     for (uint32_t i = 0; i < 2; i++)
@@ -60,7 +44,7 @@ uint16_t Tools::toInt16FromBytes(std::vector<uint8_t> bytes, unsigned int startI
     return result;
 }
 
-std::string Tools::getString(const std::vector<uint8_t> &data, int begin, int length, bool binary)
+std::string getString(const std::vector<uint8_t> &data, int begin, int length, bool binary)
 {
     std::string output = "";
     std::vector<uint8_t> d(length);
@@ -86,4 +70,25 @@ std::string Tools::getString(const std::vector<uint8_t> &data, int begin, int le
     return output;
 }
 
+uint64_t gcd(uint64_t n1, uint64_t n2)
+{
+    return (n2 == 0) ? n1 : gcd (n2, n1 % n2);
+}
+
+uint64_t egcd(uint64_t a, uint64_t b, uint64_t &x, uint64_t &y)
+{
+    if (a == 0)
+    {
+        x = 0;
+        y = 1;
+        return b;
+    }
+    uint64_t x1, y1;
+    uint64_t g = egcd(b % a, a , y1, x1);
+    x = x1 - static_cast<int64_t>((b / a)) * y1;
+    y = y1;
+    return g;
+}
+
+}
 

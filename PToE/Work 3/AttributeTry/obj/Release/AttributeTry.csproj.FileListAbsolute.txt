@@ -1,0 +1,6 @@
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\bin\Release\AttributeTry.exe.config
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\bin\Release\AttributeTry.exe
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\bin\Release\AttributeTry.pdb
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\obj\Release\AttributeTry.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\obj\Release\AttributeTry.exe
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\obj\Release\AttributeTry.pdb

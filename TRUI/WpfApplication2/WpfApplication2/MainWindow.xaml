@@ -1,0 +1,93 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow" Height="350" Width="678">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Последние документы"/>
+        <StackPanel  Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"  VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" >
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="10,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button>Открыть</Button>
+            <Button>Сохранить</Button>
+            <Button>Закрыть</Button>
+            <Button>Обработать</Button>
+            <Button>О программе</Button>
+        </StackPanel>
+
+        <StackPanel  Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"  VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Vertical" >
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="10,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Width="70">1.txt</TextBlock>
+            <TextBlock Width="70">2.txt</TextBlock>
+            <TextBlock Width="70">3.txt</TextBlock>
+            <TextBlock Width="70">4.txt</TextBlock>
+            <TextBlock Width="70">5.txt</TextBlock>
+            <TextBlock Width="70">6.txt</TextBlock>
+        </StackPanel>
+
+
+        <StackPanel  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"  VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" >
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="10,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock>1.txt</TextBlock>
+            <TextBlock>2.txt</TextBlock>
+            <TextBlock>3.txt</TextBlock>
+        </StackPanel>
+
+        <WrapPanel  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"  VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" >
+            <WrapPanel.Resources>
+                <Style TargetType="{x:Type Grid}">
+                    <Setter Property="Margin" Value="10,10,0,0"/>
+                </Style>
+            </WrapPanel.Resources>
+            <Grid>
+                <Rectangle Width="70" Height="70" Fill="Yellow" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">A</TextBlock>
+            </Grid>
+            <Grid>
+                <Rectangle Width="70" Height="70" Fill="Red" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">B</TextBlock>
+            </Grid>
+            <Grid>
+                <Rectangle Width="70" Height="70" Fill="Green" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">C</TextBlock>
+            </Grid>
+            <Grid>
+                <Rectangle Width="70" Height="70" Fill="Blue" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">D</TextBlock>
+            </Grid>
+            <Grid>
+                <Rectangle Width="70" Height="70" Fill="Gray" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">E</TextBlock>
+            </Grid>
+            <Grid>
+                <Rectangle Width="70" Height="70" Fill="Wheat" />
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">F</TextBlock>
+            </Grid>
+        </WrapPanel>
+
+    </Grid>
+</Window>

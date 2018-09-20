@@ -14,11 +14,8 @@ QVariantMap Client::keys() const
 {
     return QVariantMap
     {
-        {"G", m_secure.G},
-        {"P", m_secure.P},
-        {"publicKey", m_secure.publicKey},
-        {"secretKey", m_secure.secretKey},
-        {"key", m_secure.key}
+        {"N", m_secure.N},
+        {"D", m_secure.D}
     };
 }
 
@@ -37,7 +34,7 @@ void Client::start()
 
     m_blockSize = 0;
 
-    m_socket->connectToServer("lab4");
+    m_socket->connectToServer("lab5");
 
 }
 
@@ -56,12 +53,17 @@ void Client::read()
     if (m_socket->bytesAvailable() < m_blockSize || in.atEnd())
         return;
 
-    QString message;
-    in >> message;
+    QByteArray data;
+    in >> data;
 
-    qDebug() << __FUNCTION__ << message;
+    QString message = QString::fromUtf8(data);
+    QString decrypted = QString::fromUtf8(m_secure.decrypt(data));
 
-    emit log("~"+message);
+    qDebug() << __FUNCTION__ << "message:" << message << data;
+    qDebug() << __FUNCTION__ << "decrypted:" << decrypted;
+
+    emit log("~recieved:  "+ message);
+    emit log("~decrypted: "+ decrypted);
 
     m_blockSize = 0;
 
@@ -92,11 +94,8 @@ void Client::sendMessage(const QString &message)
 void Client::saveKeys()
 {
     QSettings settings("keys.ini",QSettings::IniFormat);
-    settings.setValue("P", m_secure.P);
-    settings.setValue("G", m_secure.G);
-    settings.setValue("SecretKey", m_secure.secretKey);
-    settings.setValue("PublicKey", m_secure.publicKey);
-    settings.setValue("Key", m_secure.key);
+    settings.setValue("D", m_secure.E);
+    settings.setValue("N", m_secure.N);
 }
 
 void Client::error(QLocalSocket::LocalSocketError error)
@@ -152,7 +151,6 @@ void Client::setupHandshake(QString &message)
     if(message.startsWith("handshake:"))
         message.remove(0, QString("handshake:").length());
 
-    uint64_t pk = -1;
     QStringList list = message.split(";");
     for(QString data : list)
     {
@@ -160,28 +158,13 @@ void Client::setupHandshake(QString &message)
         if(values.length() != 2)
             continue;
 
-        if(values.at(0) == "G")
-            m_secure.G = values.at(1).toInt();
-        else if(values.at(0) == "P")
-            m_secure.P = values.at(1).toInt();
+        if(values.at(0) == "N")
+            m_secure.N = values.at(1).toULongLong();
         else if(values.at(0) == "PublicKey")
-            pk = values.at(1).toInt();
+            m_secure.D = values.at(1).toULongLong();
     }
 
-
-    if(pk != -1)
-    {
-        m_secure.computePublicKey();
-
-        m_secure.computeKey(pk);
-        emit keysChanged(keys());
-        sendMessage("handshake:PublicKey="+QString::number(m_secure.publicKey));
-    }
-    else
-    {
-        emit log("Handshake error. Public key not received.");
-    }
-
+    emit keysChanged(keys());
 }
 
 

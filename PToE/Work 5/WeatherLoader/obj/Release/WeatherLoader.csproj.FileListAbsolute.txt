@@ -1,0 +1,11 @@
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\bin\Release\WeatherLoader.exe.config
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\bin\Release\WeatherLoader.exe
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\bin\Release\WeatherLoader.pdb
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\obj\Release\WeatherLoader.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\obj\Release\WeatherLoader.UIForm.resources
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\obj\Release\WeatherLoader.Properties.Resources.resources
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\obj\Release\WeatherLoader.csproj.GenerateResource.Cache
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\obj\Release\WeatherLoader.exe
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\obj\Release\WeatherLoader.pdb
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\bin\Release\Newtonsoft.Json.dll
+D:\Docs\Projects\Study\TPU\PToE\Work 5\WeatherLoader\bin\Release\Newtonsoft.Json.xml

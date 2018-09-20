@@ -4,7 +4,7 @@ import QtQuick.Window 2.2
 
 ApplicationWindow {
     visible: true
-    width: 480
+    width: 600
     height: 480
     title: qsTr("Lab 5")
 
@@ -29,19 +29,6 @@ ApplicationWindow {
             font.pixelSize: 20
         }
 
-        Text {
-            anchors {
-                bottom: col1.top
-                left: parent.left
-                leftMargin: 5
-                bottomMargin: 5
-            }
-
-            text: qsTr("Secret key (S) = %1").arg(internal.keys.key)
-            color: "#ffffff"
-            font.pixelSize: 16
-        }
-
         Column {
             id: col1
             anchors {
@@ -52,40 +39,18 @@ ApplicationWindow {
             }
             spacing: 2
             Text {
-                text: qsTr("G = %1").arg(internal.keys.G)
+                text: qsTr("Public key (D) = %1").arg(internal.keys.D)
                 color: "#ffffff"
                 font.pixelSize: 16
             }
 
             Text {
-                text: qsTr("P = %1").arg(internal.keys.P)
+                text: qsTr("N = %1").arg(internal.keys.N)
                 color: "#ffffff"
                 font.pixelSize: 16
             }
         }
 
-        Column {
-            id: col2
-            anchors {
-                left: col1.right
-                top: title.bottom
-                bottom: parent.bottom
-                leftMargin: 10
-            }
-            width: contentItem.width
-            spacing: 2
-            Text {
-                text: qsTr("Public key (B) = %1").arg(internal.keys.publicKey)
-                color: "#ffffff"
-                font.pixelSize: 16
-            }
-
-            Text {
-                text: qsTr("Secret key (b) = %1").arg(internal.keys.secretKey)
-                color: "#ffffff"
-                font.pixelSize: 16
-            }
-        }
         Button {
             id: saveButton
             anchors {

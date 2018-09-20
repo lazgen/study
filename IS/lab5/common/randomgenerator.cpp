@@ -7,12 +7,12 @@ RandomGenerator::RandomGenerator()
 
 uint64_t RandomGenerator::maxRandomInteger()
 {
-    return 2147483648;
+    return 32768;//2147483648;
 }
 
 uint64_t RandomGenerator::maxPrimeNumber()
 {
-    return 2147483648;
+    return 1217; // 32768;//2147483648;
 }
 
 uint64_t RandomGenerator::generateRandomNumber()

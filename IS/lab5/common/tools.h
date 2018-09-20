@@ -5,22 +5,20 @@
 #include <stdlib.h>
 #include <vector>
 
-#define CRC_SSP_POLYNOMIAL 0x8005 /* x^16 + x^15 + x^2 + 1 */
-#define CRC_SSP_SEED 0xFFFF
-
-class Tools
+namespace Tools
 {
-public:
 
-    static uint16_t getCrc16(const std::vector<uint8_t> &data, int size, int offset);
+    uint64_t XpowYmodN(uint64_t x, uint64_t y, uint64_t n);
 
-    static uint64_t XpowYmodN(uint64_t x, uint64_t y, uint64_t n);
+    uint32_t toInt32FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian);
 
-    static uint32_t toInt32FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian);
+    uint16_t toInt16FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian);
 
-    static uint16_t toInt16FromBytes(std::vector<uint8_t> bytes, unsigned int startIndex, bool bigEndian);
+    std::string getString(const std::vector<uint8_t> &data, int begin, int length, bool binary = false);
 
-    static std::string getString(const std::vector<uint8_t> &data, int begin, int length, bool binary = false);
+    uint64_t gcd(uint64_t n1, uint64_t n2);
+
+    uint64_t egcd(uint64_t a, uint64_t b, uint64_t &x, uint64_t &y);
 
 };
 

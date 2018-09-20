@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QVariantMap>
-#include "diffhelman.h"
+#include "rsa.h"
 
 class QLocalServer;
 class QLocalSocket;
@@ -31,6 +31,7 @@ public slots:
 
 private:
     void handshake();
+    void send(QByteArray &message);
 
 private slots:
     void onNewConnection();
@@ -39,7 +40,7 @@ private slots:
 private:
     QLocalServer *m_server;
     QLocalSocket *m_clientConnection;
-    DiffHelman m_secure;
+    RSA m_secure;
 };
 
 #endif // SERVER_H

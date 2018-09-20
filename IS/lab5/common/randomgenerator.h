@@ -7,12 +7,11 @@
 
 class RandomGenerator
 {
+public:
     enum Primality{
         Composite,
         Pseudoprime
     };
-
-public:
     explicit RandomGenerator();
 
     static uint64_t maxRandomInteger();
@@ -23,7 +22,6 @@ public:
 
     static uint64_t generateRandomPrimeNumber();
 
-private:
     static Primality checkPrimalityMillerRabin(uint64_t n, uint16_t k);
 };
 

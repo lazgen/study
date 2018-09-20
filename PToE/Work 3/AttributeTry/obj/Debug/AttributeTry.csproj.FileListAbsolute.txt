@@ -1,0 +1,18 @@
+d:\users\yuriy2\documents\visual studio 2013\Projects\AttributeTry\AttributeTry\bin\Debug\AttributeTry.exe.config
+d:\users\yuriy2\documents\visual studio 2013\Projects\AttributeTry\AttributeTry\bin\Debug\AttributeTry.exe
+d:\users\yuriy2\documents\visual studio 2013\Projects\AttributeTry\AttributeTry\bin\Debug\AttributeTry.pdb
+d:\users\yuriy2\documents\visual studio 2013\Projects\AttributeTry\AttributeTry\obj\Debug\AttributeTry.csprojResolveAssemblyReference.cache
+d:\users\yuriy2\documents\visual studio 2013\Projects\AttributeTry\AttributeTry\obj\Debug\AttributeTry.exe
+d:\users\yuriy2\documents\visual studio 2013\Projects\AttributeTry\AttributeTry\obj\Debug\AttributeTry.pdb
+D:\Docs\Projects\Study\TPU\PToE\AttributeTry\AttributeTry\bin\Debug\AttributeTry.exe.config
+D:\Docs\Projects\Study\TPU\PToE\AttributeTry\AttributeTry\obj\Debug\AttributeTry.exe
+D:\Docs\Projects\Study\TPU\PToE\AttributeTry\AttributeTry\obj\Debug\AttributeTry.pdb
+D:\Docs\Projects\Study\TPU\PToE\AttributeTry\AttributeTry\bin\Debug\AttributeTry.exe
+D:\Docs\Projects\Study\TPU\PToE\AttributeTry\AttributeTry\bin\Debug\AttributeTry.pdb
+D:\Docs\Projects\Study\TPU\PToE\AttributeTry\AttributeTry\obj\Debug\AttributeTry.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\bin\Debug\AttributeTry.exe.config
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\obj\Debug\AttributeTry.exe
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\obj\Debug\AttributeTry.pdb
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\bin\Debug\AttributeTry.exe
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\bin\Debug\AttributeTry.pdb
+D:\Docs\Projects\Study\TPU\PToE\Work 3\AttributeTry\obj\Debug\AttributeTry.csprojResolveAssemblyReference.cache

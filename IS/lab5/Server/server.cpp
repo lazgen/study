@@ -18,18 +18,16 @@ QVariantMap Server::keys() const
 {
     return QVariantMap
     {
-        {"G", m_secure.G},
-        {"P", m_secure.P},
-        {"publicKey", m_secure.publicKey},
-        {"secretKey", m_secure.secretKey},
-        {"key", m_secure.key}
+        {"N", m_secure.N},
+        {"D", m_secure.D},
+        {"E", m_secure.E}
     };
 }
 
 void Server::start()
 {
     m_server = new QLocalServer(this);
-    if (!m_server->listen("lab4")) {
+    if (!m_server->listen("lab5")) {
         emit log(QString("Unable to start the server: %1.")
                  .arg(m_server->errorString()));
         return;
@@ -44,6 +42,53 @@ void Server::start()
 }
 
 void Server::sendMessage(const QString &message)
+{
+    QByteArray encrypted = m_secure.encrypt(message.toUtf8());
+    QByteArray decrypted = m_secure.decrypt(encrypted);
+    qDebug() << __FUNCTION__ << "original:" << message;
+    qDebug() << __FUNCTION__ << "encrypted:" << encrypted;
+    qDebug() << __FUNCTION__ << "decrypted:" << decrypted << QString::fromUtf8(decrypted);
+
+    emit log("original:  " + message);
+    emit log("encrypted: " + QString::fromUtf8(encrypted));
+    emit log("decrypted: " + QString::fromUtf8(decrypted));
+    send(encrypted);
+}
+
+void Server::generateKeys()
+{
+    m_secure.generatePQ();
+    m_secure.generateED();
+
+    if(m_clientConnection) {
+        handshake();
+    }
+
+    emit keysChanged(keys());
+}
+
+void Server::saveKeys()
+{
+    QSettings settings("keys.ini",QSettings::IniFormat);
+    settings.setValue("P", m_secure.P);
+    settings.setValue("E", m_secure.E);
+    settings.setValue("N", m_secure.N);
+}
+
+void Server::handshake()
+{
+    QStringList list;
+    list.append("N="+QString::number(m_secure.N));
+    list.append("PublicKey="+QString::number(m_secure.D));
+
+    QString s = "handshake:"+list.join(";");
+    QByteArray a = s.toUtf8();
+    send(a);
+
+    emit log("Publick key sent to client: " + list.join("; "));
+}
+
+void Server::send(QByteArray &message)
 {
     if(!m_clientConnection)
         return;
@@ -63,42 +108,6 @@ void Server::sendMessage(const QString &message)
     //clientConnection->disconnectFromServer();
 }
 
-void Server::generateKeys()
-{
-    m_secure.G = RandomGenerator::generateRandomPrimeNumber();
-    m_secure.P = RandomGenerator::generateRandomPrimeNumber();
-    m_secure.computePublicKey();
-    m_secure.key = -1;
-
-    if(m_clientConnection) {
-        handshake();
-    }
-
-    emit keysChanged(keys());
-}
-
-void Server::saveKeys()
-{
-    QSettings settings("keys.ini",QSettings::IniFormat);
-    settings.setValue("P", m_secure.P);
-    settings.setValue("G", m_secure.G);
-    settings.setValue("SecretKey", m_secure.secretKey);
-    settings.setValue("PublicKey", m_secure.publicKey);
-    settings.setValue("Key", m_secure.key);
-}
-
-void Server::handshake()
-{
-    QStringList list;
-    list.append("G="+QString::number(m_secure.G));
-    list.append("P="+QString::number(m_secure.P));
-    list.append("PublicKey="+QString::number(m_secure.publicKey));
-
-    sendMessage("handshake:"+list.join(";"));
-
-    emit log("Handshake message sent to client: " + list.join("; "));
-}
-
 void Server::onNewConnection()
 {
     emit log("New connection.");
@@ -110,7 +119,7 @@ void Server::onNewConnection()
         m_clientConnection = nullptr;
     });
 
-    //handshake();
+    handshake();
 }
 
 void Server::onReadyRead()
@@ -132,15 +141,17 @@ void Server::onReadyRead()
     qDebug() << __FUNCTION__ << message;
 
     emit log("~"+message);
+    emit log("~decrypted: "+ m_secure.decrypt(message));
 
-    if(message.startsWith("handshake:"))
-        message.remove(0, QString("handshake:").length());
 
-    QStringList values = message.split("=");
-    if(values.length() == 2 && values.at(0) == "PublicKey") {
-        m_secure.computeKey(values.at(1).toInt());
-        emit keysChanged(keys());
-        qDebug() << "Secret key =" << m_secure.key;
-    }
+//    if(message.startsWith("handshake:"))
+//        message.remove(0, QString("handshake:").length());
+
+//    QStringList values = message.split("=");
+//    if(values.length() == 2 && values.at(0) == "PublicKey") {
+//        m_secure.computeKey(values.at(1).toInt());
+//        emit keysChanged(keys());
+//        qDebug() << "Secret key =" << m_secure.key;
+//    }
 
 }

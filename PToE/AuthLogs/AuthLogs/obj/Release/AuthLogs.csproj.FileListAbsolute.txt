@@ -1,0 +1,12 @@
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\bin\Release\AuthLogs.exe.config
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\bin\Release\AuthLogs.exe
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\bin\Release\AuthLogs.pdb
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\obj\Release\AuthLogs.exe
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\obj\Release\AuthLogs.pdb
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\obj\Release\AuthLogs.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\TPU\PToE\AuthLogs\AuthLogs\bin\Release\AuthLogs.exe.config
+D:\Docs\Projects\Study\TPU\TPU\PToE\AuthLogs\AuthLogs\obj\Release\AuthLogs.exe
+D:\Docs\Projects\Study\TPU\TPU\PToE\AuthLogs\AuthLogs\obj\Release\AuthLogs.pdb
+D:\Docs\Projects\Study\TPU\TPU\PToE\AuthLogs\AuthLogs\bin\Release\AuthLogs.exe
+D:\Docs\Projects\Study\TPU\TPU\PToE\AuthLogs\AuthLogs\bin\Release\AuthLogs.pdb
+D:\Docs\Projects\Study\TPU\TPU\PToE\AuthLogs\AuthLogs\obj\Release\AuthLogs.csprojResolveAssemblyReference.cache

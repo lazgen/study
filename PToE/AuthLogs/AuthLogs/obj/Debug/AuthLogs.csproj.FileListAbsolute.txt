@@ -1,0 +1,6 @@
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\bin\Debug\AuthLogs.exe.config
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\bin\Debug\AuthLogs.exe
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\bin\Debug\AuthLogs.pdb
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\obj\Debug\AuthLogs.csprojResolveAssemblyReference.cache
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\obj\Debug\AuthLogs.exe
+E:\Projects\TPU\English\Module2\Task1\AuthLogs\AuthLogs\obj\Debug\AuthLogs.pdb

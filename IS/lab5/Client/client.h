@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QLocalSocket>
 
-#include "diffhelman.h"
+#include "rsa.h"
 
 class QLocalSocket;
 
@@ -39,7 +39,7 @@ private:
 private:
     QLocalSocket *m_socket;
     quint32 m_blockSize;
-    DiffHelman m_secure;
+    RSA m_secure;
 };
 
 #endif // SERVER_H

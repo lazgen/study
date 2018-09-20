@@ -1,0 +1,15 @@
+<?xml version="l.0">
+<ejb-jar>
+	<enterprise-beans>
+		<entity>
+			<ejb-name>accountBean</ejb-name> <home>accounthome</home> <remote>account</remote>
+			<ejb-class>Account</ejb-class> <persistence-type>Container </persistence-type> <pri-key-class>Integer</pri-key-class>
+			< cmp - field><field-name>id</field-name> </cmp-field>
+			<cmp-fieldxfield-name>name</field-name>
+		</cmp-field>
+	</enterprise-beans>
+	<assembly-descriptor>
+		<security-role>
+		</security-role>
+	</assembly-descriptor>
+</ejb-jar>
