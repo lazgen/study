@@ -1,0 +1,14 @@
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\bin\Debug\WpfApplication3.1.exe.config
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3.1.csprojResolveAssemblyReference.cache
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\MainWindow.g.cs
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\App.g.cs
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3.1_MarkupCompile.cache
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3.1_MarkupCompile.lref
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\bin\Debug\WpfApplication3.1.exe
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\bin\Debug\WpfApplication3.1.pdb
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\MainWindow.baml
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3.1.g.resources
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3._1.Properties.Resources.resources
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3.1.csproj.GenerateResource.Cache
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3.1.exe
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.1\WpfApplication3.1\obj\Debug\WpfApplication3.1.pdb

@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApplication3._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication3._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    
+    
+
+    <DockPanel>
+
+        <!--Toolbar-->
+        <ToolBarTray Tag="Dock" DockPanel.Dock="Top" IsLocked="True">
+            <ToolBar>
+                <Label>Ink color:</Label>
+                <ComboBox Width="50" Tag="ComboBox" SelectedIndex="0">
+                    <ComboBoxItem Tag="Black"  Background="Black"   Selected="Pick_Color">Black</ComboBoxItem>
+                    <ComboBoxItem Tag="Red"    Background="Red"     Selected="Pick_Color">Red</ComboBoxItem>
+                    <ComboBoxItem Tag="Green"  Background="Green"   Selected="Pick_Color">Green</ComboBoxItem>
+                    <ComboBoxItem Tag="Blue"   Background="Blue"    Selected="Pick_Color">Blue</ComboBoxItem>
+                </ComboBox>
+                
+                <Separator/>
+                <Label>Ink size:</Label>
+                <Slider Width="100" VerticalAlignment="Center" Minimum="2" Maximum="30" ValueChanged="Slider_ValueChanged"/>
+                
+                <Separator />
+                <RadioButton GroupName="Mode" x:Name="ink_mode" IsChecked="True" Checked="Mode_Checked">Ink</RadioButton>
+                <RadioButton GroupName="Mode" x:Name="select_mode" Checked="Mode_Checked">Select</RadioButton>
+                <RadioButton GroupName="Mode" x:Name="eraseByPoint_mode" Checked="Mode_Checked">EraseByPoint</RadioButton>
+                <RadioButton GroupName="Mode" x:Name="eraseByStroke_mode" Checked="Mode_Checked">EraseByStroke</RadioButton>
+                <Separator />
+            </ToolBar>
+        </ToolBarTray>
+        <!--Toolbar end-->
+
+        <InkCanvas x:Name="canvas_item">
+            <InkCanvas.DefaultDrawingAttributes>
+                <DrawingAttributes x:Name="inkAttributes" Color="Black" Height="5" Width="5"/>
+            </InkCanvas.DefaultDrawingAttributes>
+        </InkCanvas>
+
+    </DockPanel>
+</Window>
