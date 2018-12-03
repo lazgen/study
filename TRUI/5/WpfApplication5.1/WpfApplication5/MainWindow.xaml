@@ -5,28 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MultiEdit" Height="350" Width="525">
 
 
     <Window.Resources>
-        <Style TargetType="Button">
+
+        <Style TargetType="TextBox" x:Key="PassiveTextBoxStyle"  x:Name="PassiveTextBoxStyle">
             <Style.Setters>
-                <Setter Property="Background" Value="DarkBlue" />
-                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="LightGray" />
                 <Setter Property="FontFamily" Value="Verdana" />
-                <Setter Property="Padding" Value="5" />
+                <Setter Property="FontSize" Value="10" />
                 <Setter Property="Margin" Value="5" />
+                <Setter Property="Height" Value="30" />
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Hidden" />
+                <Setter Property="AcceptsReturn" Value="True" />
+                <EventSetter Event="LostFocus" Handler="OnLostFocus" />
+                <EventSetter Event="GotFocus" Handler="OnGotFocus" />
             </Style.Setters>
         </Style>
+
+        <Style BasedOn="{StaticResource PassiveTextBoxStyle}" TargetType="TextBox" x:Key="ActiveTextBoxStyle" x:Name="ActiveTextBoxStyle">
+            <Style.Setters>
+                <Setter Property="Background" Value="LightBlue" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Height" Value="200" />
+                <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="Rectangle">
+            <Style.Setters>
+                <Setter Property="Fill">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="LightBlue" Offset="0.0" />
+                            <GradientStop Color="Coral" Offset="1.0" />
+                            </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+        
+        
     </Window.Resources>
 
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-            <Button>Открыть</Button>
-            <Button>Обработать</Button>
-            <Button Background="Red">Сохранить</Button>
-            <Button Padding="5" Margin="5">Закрыть</Button>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Column="0"></Rectangle>
+        <StackPanel VerticalAlignment="Top">
+            <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+            <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+            <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+        </StackPanel>
+        
+
+        <Rectangle Grid.Column="1"></Rectangle>
+        <StackPanel VerticalAlignment="Top" Grid.Column="1">
+            <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+            <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+            <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
         </StackPanel>
 
     </Grid>
+    
+    
+    
 </Window>

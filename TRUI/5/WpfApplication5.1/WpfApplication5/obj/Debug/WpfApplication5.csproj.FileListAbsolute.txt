@@ -15,3 +15,14 @@ D:\Docs\Projects\Study\TPU\TPU\TRUI\WpfApplication5\WpfApplication5\obj\Debug\Wp
 D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\bin\Debug\WpfApplication5.exe.config
 D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5.exe
 D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\bin\Debug\WpfApplication5.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\bin\Debug\WpfApplication5.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\MainWindow.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\App.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5_MarkupCompile.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5_MarkupCompile.lref
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\MainWindow.baml
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5.g.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5.Properties.Resources.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5.csproj.GenerateResource.Cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication5.1\WpfApplication5\obj\Debug\WpfApplication5.csprojResolveAssemblyReference.cache

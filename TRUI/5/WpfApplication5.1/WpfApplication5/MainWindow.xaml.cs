@@ -24,5 +24,17 @@ namespace WpfApplication5
         {
             InitializeComponent();
         }
+
+        private void OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("OnLostFocus");
+            (sender as FrameworkElement).Style = (Style)Resources["PassiveTextBoxStyle"];
+        }
+
+        private void OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("OnGotFocus");
+            (sender as FrameworkElement).Style = (Style)Resources["ActiveTextBoxStyle"];
+        }
     }
 }

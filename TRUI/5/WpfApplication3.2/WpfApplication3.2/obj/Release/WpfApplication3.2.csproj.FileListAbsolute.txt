@@ -1,0 +1,13 @@
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\bin\Release\WpfApplication3.2.exe.config
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\bin\Release\WpfApplication3.2.exe
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\bin\Release\WpfApplication3.2.pdb
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\MainWindow.g.cs
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\App.g.cs
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\WpfApplication3.2_MarkupCompile.cache
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\WpfApplication3.2_MarkupCompile.lref
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\MainWindow.baml
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\WpfApplication3.2.g.resources
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\WpfApplication3._2.Properties.Resources.resources
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\WpfApplication3.2.csproj.GenerateResource.Cache
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\WpfApplication3.2.exe
+C:\Users\Mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Release\WpfApplication3.2.pdb
