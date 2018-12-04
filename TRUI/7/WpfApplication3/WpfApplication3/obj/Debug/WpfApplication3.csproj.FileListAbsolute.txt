@@ -1,0 +1,14 @@
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\bin\Debug\WpfApplication3.exe.config
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\bin\Debug\WpfApplication3.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\bin\Debug\WpfApplication3.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\MainWindow.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\App.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3_MarkupCompile.lref
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\MainWindow.baml
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.g.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.Properties.Resources.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.csproj.GenerateResource.Cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\7\WpfApplication3\WpfApplication3\obj\Debug\WpfApplication3.pdb
