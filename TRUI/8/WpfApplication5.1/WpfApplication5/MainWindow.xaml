@@ -1,0 +1,119 @@
+﻿<Window x:Class="WpfApplication5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication5"
+        mc:Ignorable="d"
+        Title="MultiEdit" Height="350" Width="525">
+
+
+    <Window.Resources>
+
+        <Style TargetType="TextBox" x:Key="PassiveTextBoxStyle"  x:Name="PassiveTextBoxStyle">
+            <Style.Setters>
+                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="FontFamily" Value="Verdana" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Height" Value="30" />
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Hidden" />
+                <Setter Property="AcceptsReturn" Value="True" />
+                <EventSetter Event="LostFocus" Handler="OnLostFocus" />
+                <EventSetter Event="GotFocus" Handler="OnGotFocus" />
+            </Style.Setters>
+
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="GotFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty = "(Height)" To="200" Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="LostFocus">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty = "(Height)" To="30" Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+
+        </Style>
+
+        <Style BasedOn="{StaticResource PassiveTextBoxStyle}" TargetType="TextBox" x:Key="ActiveTextBoxStyle" x:Name="ActiveTextBoxStyle">
+            <Style.Setters>
+                <Setter Property="Background" Value="LightBlue" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="5" />
+                <!--<Setter Property="Height" Value="200" />-->
+                <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            </Style.Setters>
+
+        </Style>
+
+        <Style TargetType="Rectangle">
+            <Style.Setters>
+                <Setter Property="Fill">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="LightBlue" Offset="0.0" />
+                            <GradientStop Color="Coral" Offset="1.0" />
+                            </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+        </Style>
+        
+        
+    </Window.Resources>
+
+    <DockPanel>
+
+
+        <Slider DockPanel.Dock="Top" x:Name="sliderItem" Value="1" Minimum="0" Maximum="2">
+            
+        </Slider>
+
+        <Grid x:Name="gridItem">
+
+            <Grid.RenderTransform>
+                <ScaleTransform ScaleX="{Binding ElementName=sliderItem, Path=Value}" ScaleY="{Binding ElementName=sliderItem, Path=Value}" CenterX="{Binding ElementName=gridItem, Path=Width/2}" CenterY="{Binding ElementName=gridItem, Path=Height/2}" />
+            </Grid.RenderTransform>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Column="0"></Rectangle>
+            <StackPanel VerticalAlignment="Top">
+                <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+                <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+                <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+            </StackPanel>
+
+
+            <Rectangle Grid.Column="1"></Rectangle>
+            <StackPanel VerticalAlignment="Top" Grid.Column="1">
+                <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+                <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+                <TextBox Style="{StaticResource PassiveTextBoxStyle}"></TextBox>
+            </StackPanel>
+
+        </Grid>
+    </DockPanel>
+
+
+    
+    
+    
+</Window>
