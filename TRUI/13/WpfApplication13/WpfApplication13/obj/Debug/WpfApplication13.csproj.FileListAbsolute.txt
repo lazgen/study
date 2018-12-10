@@ -1,0 +1,14 @@
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\bin\Debug\WpfApplication13.exe.config
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\bin\Debug\WpfApplication13.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\bin\Debug\WpfApplication13.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\MainWindow.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\App.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13_MarkupCompile.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13_MarkupCompile.lref
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\MainWindow.baml
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13.g.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13.Properties.Resources.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13.csproj.GenerateResource.Cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\13\WpfApplication13\WpfApplication13\obj\Debug\WpfApplication13.pdb
