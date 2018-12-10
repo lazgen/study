@@ -1,0 +1,119 @@
+﻿<Window x:Class="WpfApplication12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1000">
+
+
+    <Window.Resources>
+        <Style TargetType="Image" >
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard >
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" To="10" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="400" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Top)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Left)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style TargetType="local:SlippyRoad" >
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard >
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" To="10" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="400" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Top)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Left)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="local:ReversalProhibited" >
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" To="10" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="400" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Top)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Left)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="local:OvertakingIsProhibited" >
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard >
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" To="10" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="400" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="0.65" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Top)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="(Canvas.Left)"  Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:1" />
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Canvas>
+        <local:SlippyRoad Canvas.Left="0" Canvas.Top="20" >
+            <local:SlippyRoad.RenderTransform>
+                <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+            </local:SlippyRoad.RenderTransform>
+        </local:SlippyRoad>
+        <Image Source="Resources/1.15_Russian_road_sign.png" Canvas.Left="180" Canvas.Top="20">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+            </Image.RenderTransform>
+        </Image>
+        <local:ReversalProhibited Canvas.Left="0" Canvas.Top="180">
+            <local:ReversalProhibited.RenderTransform>
+                <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+            </local:ReversalProhibited.RenderTransform>
+        </local:ReversalProhibited>
+        <Image Source="Resources/3.19_Russian_road_sign.png" Canvas.Left="180" Canvas.Top="180">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+            </Image.RenderTransform>
+        </Image>
+        <local:OvertakingIsProhibited Canvas.Left="0" Canvas.Top="340">
+            <local:OvertakingIsProhibited.RenderTransform>
+                <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+            </local:OvertakingIsProhibited.RenderTransform>
+        </local:OvertakingIsProhibited>
+        <Image Source="Resources/3.20_Russian_road_sign.png" Canvas.Left="180" Canvas.Top="340">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+            </Image.RenderTransform>
+        </Image>
+    </Canvas>
+</Window>

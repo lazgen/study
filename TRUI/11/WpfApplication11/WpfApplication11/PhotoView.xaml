@@ -41,8 +41,7 @@
                     </DataTrigger.EnterActions>
                 </DataTrigger>
                 
-                <DataTrigger Binding="{Binding ElementName=rotateLeft, Path=IsPressed}" 
-                             Value="True">
+                <DataTrigger Binding="{Binding ElementName=rotateLeft, Path=IsPressed}" Value="True">
                     <DataTrigger.EnterActions>
                         <BeginStoryboard>
                             <Storyboard>
