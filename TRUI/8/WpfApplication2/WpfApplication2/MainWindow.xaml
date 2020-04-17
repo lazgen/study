@@ -1,0 +1,131 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1185">
+
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="Panel">
+            <Setter Property="Orientation" Value="Vertical"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Height" Value="130"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <SkewTransform AngleX="0" CenterX="100" CenterY="100" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="GotFocus">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" To="480" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" To="50" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleY)" To="0" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="LostFocus">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Left)" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Canvas.Top)" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(SkewTransform.AngleY)" Duration="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="Text" Value="RenderTransform.Angle
+                RenderTransform.AngleX
+                RenderTransform.AngleY
+                RenderTransform.CenterX
+                RenderTransform.CenterY
+                RenderTransform.X
+                RenderTransform.Y
+                RenderTransform.ScaleX
+                RenderTransform.ScaleY"/>
+        </Style>
+    </Window.Resources>
+    
+    
+    <Canvas>
+        <StackPanel Opacity="0.3" Canvas.Top="250" Canvas.Left="0" Style="{StaticResource Panel}">
+            <StackPanel.RenderTransform>
+                <SkewTransform AngleY="20"/>
+            </StackPanel.RenderTransform>
+            <StackPanel Orientation="Horizontal">
+                <Button>Копировать</Button>
+                <Button>Вырезать</Button>
+                <Button>Вставить</Button>
+            </StackPanel>
+            <TextBox/>
+        </StackPanel>
+
+        <StackPanel Opacity="0.5" Canvas.Top="340" Canvas.Left="240" Style="{StaticResource Panel}">
+            <StackPanel.RenderTransform>
+                <SkewTransform AngleY="10"/>
+            </StackPanel.RenderTransform>
+            <StackPanel Orientation="Horizontal">
+                <Button>Копировать</Button>
+                <Button>Вырезать</Button>
+                <Button>Вставить</Button>
+            </StackPanel>
+            <TextBox/>
+        </StackPanel>
+
+        <StackPanel Opacity="0.7" Canvas.Top="380" Canvas.Left="480" Style="{StaticResource Panel}">
+            <StackPanel.RenderTransform>
+                <SkewTransform AngleY="0"/>
+            </StackPanel.RenderTransform>
+            <StackPanel Orientation="Horizontal">
+                <Button>Копировать</Button>
+                <Button>Вырезать</Button>
+                <Button>Вставить</Button>
+            </StackPanel>
+            <TextBox/>
+        </StackPanel>
+
+        <StackPanel Opacity="0.5" Canvas.Top="380" Canvas.Left="720" Style="{StaticResource Panel}">
+            <StackPanel.RenderTransform>
+                <SkewTransform AngleY="-10" />
+            </StackPanel.RenderTransform>
+            <StackPanel Orientation="Horizontal">
+                <Button>Копировать</Button>
+                <Button>Вырезать</Button>
+                <Button>Вставить</Button>
+            </StackPanel>
+            <TextBox/>
+        </StackPanel>
+
+        <StackPanel Opacity="0.3" Canvas.Top="330" Canvas.Left="960" Style="{StaticResource Panel}">
+            <StackPanel.RenderTransform>
+                <SkewTransform AngleY="-20"/>
+            </StackPanel.RenderTransform>
+            <StackPanel Orientation="Horizontal">
+                <Button>Копировать</Button>
+                <Button>Вырезать</Button>
+                <Button>Вставить</Button>
+            </StackPanel>
+            <TextBox/>
+        </StackPanel>
+    </Canvas>
+
+</Window>

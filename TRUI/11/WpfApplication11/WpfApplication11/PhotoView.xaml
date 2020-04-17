@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="WpfApplication11.PhotoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApplication11"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200">
+
+    <UserControl.Resources>
+        <Style TargetType="Rectangle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName = Shadow, Path = IsMouseOver}" Value="true">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect/>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style TargetType="Image" x:Key="ImageItemStyle">
+            <Style.Setters>
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="0"/>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=rotateRight, Path=IsPressed}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle" Duration="0:0:0.25" By="90"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+                
+                <DataTrigger Binding="{Binding ElementName=rotateLeft, Path=IsPressed}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle" Duration="0:0:0.25" By="-90"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    
+    <Grid>
+        <Canvas>
+            <Rectangle Fill="AliceBlue" Width="200" Height="200" Canvas.Top="0" Canvas.Left="0"/>
+        </Canvas>
+        <StackPanel Orientation="Vertical" x:Name="Shadow">
+            <TextBox x:Name="titleItem" Width="200" Text="https://i.redd.it/bhx8n681lbxz.jpg" />
+            <Image x:Name="imageItem" Style="{StaticResource ImageItemStyle}" Height="160" Width="200" Source="{Binding ElementName=titleItem, Path=Text}" />
+            
+            <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="rotateLeft" Width="25" Height="20">-90</Button>
+                <Button x:Name="rotateRight" Width="25" Height="20">+90</Button>
+            </WrapPanel>
+            
+        </StackPanel>
+    </Grid>
+
+</UserControl>

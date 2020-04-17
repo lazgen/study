@@ -1,0 +1,42 @@
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.exe.config
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.exe
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.pdb
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\MainWindow.g.cs
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\App.g.cs
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2_MarkupCompile.cache
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2_MarkupCompile.lref
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\MainWindow.baml
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.g.resources
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3._2.Properties.Resources.resources
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.csproj.GenerateResource.Cache
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.exe
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.pdb
+c:\users\mrlaz\documents\visual studio 2015\Projects\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.exe.config
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\MainWindow.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\App.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2_MarkupCompile.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2_MarkupCompile.lref
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\MainWindow.baml
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.g.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3._2.Properties.Resources.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\4\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.csproj.GenerateResource.Cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.exe.config
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.exe
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\bin\Debug\WpfApplication3.2.pdb
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.csprojResolveAssemblyReference.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\MainWindow.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\App.g.cs
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2_MarkupCompile.cache
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2_MarkupCompile.lref
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\MainWindow.baml
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.g.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3._2.Properties.Resources.resources
+D:\Docs\Projects\Study\TPU\TPU\TRUI\5\WpfApplication3.2\WpfApplication3.2\obj\Debug\WpfApplication3.2.csproj.GenerateResource.Cache

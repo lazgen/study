@@ -1,0 +1,133 @@
+﻿<Window x:Class="WpfApplication3._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication3._1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+
+    <Window.Resources>
+        <Style TargetType="Control" x:Key="StyleButton">
+            <Style.Setters>
+                <Setter Property="Background" Value="LightBlue" />
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="FontFamily" Value="Verdana" />
+                <Setter Property="Margin" Value="5"/>
+            </Style.Setters>
+        </Style>
+
+        <Style x:Key="RoundCorner" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="grid">
+                            <Border x:Name="border" CornerRadius="8" BorderBrush="Blue" BorderThickness="1">
+                                <Border.Background>
+                                    <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                        <RadialGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5" 
+                                                        ScaleX="1.5" ScaleY="1.5"/>
+                                                <TranslateTransform X="0.02" Y="0.3"/>
+                                            </TransformGroup>
+                                        </RadialGradientBrush.RelativeTransform>
+                                        <GradientStop Offset="1" Color="#00000000"/>
+                                        <GradientStop Offset="0.3" Color="#FFFFFFFF"/>
+                                    </RadialGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                                </ContentPresenter>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                            <RadialGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                    <TranslateTransform X="0.02" Y="0.3"/>
+                                                </TransformGroup>
+                                            </RadialGradientBrush.RelativeTransform>
+                                            <GradientStop Color="#00000000" Offset="1"/>
+                                            <GradientStop Color="#FF303030" Offset="0.3"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF33962B"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+    <DockPanel Tag="Body" x:Name="bodyItem" Background="{Binding ElementName=ColorComboBox, Path=SelectedItem.Background}">
+
+        <!--Menu-->
+        <Menu x:Uid="Menu" DockPanel.Dock="Top">
+            <MenuItem Tag="File" Header="_File" Mouse.MouseEnter="MouseEnter">
+                <!--<MenuItem Header="_Open" />-->
+                <Separator />
+                <MenuItem Tag="Close" Header="_Close" Mouse.MouseEnter="MouseEnter" Click="MenuItem_Click" />
+            </MenuItem>
+            <MenuItem x:Name="ColorMenu" Tag="MenuColor" Header="_Color" Mouse.MouseEnter="MouseEnter">
+                <MenuItem Style="{StaticResource ResourceKey=StyleButton}" Tag="White" Background="White" Header="_White" Mouse.MouseEnter="MouseEnter" Click="Pick_Color"/>
+                <MenuItem Style="{StaticResource ResourceKey=StyleButton}" Tag="Red"   Background="Red"   Header="_Red"   Mouse.MouseEnter="MouseEnter" Click="Pick_Color"/>
+                <MenuItem Style="{StaticResource ResourceKey=StyleButton}" Tag="Green" Background="Green" Header="_Green" Mouse.MouseEnter="MouseEnter" Click="Pick_Color"/>
+                <MenuItem Style="{StaticResource ResourceKey=StyleButton}" Tag="Blue"  Background="Blue"  Header="_Blue"  Mouse.MouseEnter="MouseEnter" Click="Pick_Color"/>
+            </MenuItem>
+            <MenuItem Tag="About" Mouse.MouseEnter="MouseEnter" Header="_About" Click="MenuItem_Click"/>
+        </Menu>
+        <!--Menu end-->
+
+        <!--Toolbar-->
+        <ToolBarTray Tag="Dock" DockPanel.Dock="Top" IsLocked="True">
+            <ToolBar>
+                <Button Style="{DynamicResource RoundCorner}" Tag="Close" Mouse.MouseEnter="MouseEnter" Click="MenuItem_Click">Close</Button>
+                <Button Style="{DynamicResource RoundCorner}" Tag="About" Mouse.MouseEnter="MouseEnter" Click="MenuItem_Click">About</Button>
+                <Separator></Separator>
+                <Label>Pick body color:</Label>
+                <ComboBox Tag="ComboBox" x:Name="ColorComboBox" SelectedIndex="0" Mouse.MouseEnter="MouseEnter">
+                    <ComboBoxItem Style="{StaticResource ResourceKey=StyleButton}" Tag="White"  Background="#ffffff" MouseEnter="MouseEnter">White</ComboBoxItem>
+                    <ComboBoxItem Style="{StaticResource ResourceKey=StyleButton}" Tag="Red"    Background="#ff0000" MouseEnter="MouseEnter">Red</ComboBoxItem>
+                    <ComboBoxItem Style="{StaticResource ResourceKey=StyleButton}" Tag="Green"  Background="#00ff00" MouseEnter="MouseEnter">Green</ComboBoxItem>
+                    <ComboBoxItem Style="{StaticResource ResourceKey=StyleButton}" Tag="Blue"   Background="#0000ff" MouseEnter="MouseEnter">Blue</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        <!--Toolbar end-->
+
+
+        <!--Statusbar-->
+        <StatusBar DockPanel.Dock="Bottom">
+            <Label x:Name="statusbarLabel">...</Label>
+        </StatusBar>
+        <!--Statusbar end-->
+
+        <!--Body-->
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center">Hello World!</Label>
+        <!--Body end-->
+
+
+    </DockPanel>
+
+
+</Window>

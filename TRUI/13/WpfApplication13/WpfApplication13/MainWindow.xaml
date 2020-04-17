@@ -1,0 +1,166 @@
+﻿<Window x:Class="WpfApplication13.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication13"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="850">
+
+    <Window.Resources>
+        <PathGeometry x:Key="PathAnimation">
+            <PathFigure StartPoint="400,500">
+                <QuadraticBezierSegment Point1="100,250" Point2="100, 200"/>
+            </PathFigure>
+            
+            <PathFigure StartPoint="100,200">
+                <BezierSegment  Point1="100,100" Point2="700,100" Point3="700,200"/>
+            </PathFigure>
+            
+            <PathFigure StartPoint="700, 200">
+                <QuadraticBezierSegment Point1="700,250" Point2="400,500"/>
+            </PathFigure>
+        </PathGeometry>
+        
+        <Style TargetType="Viewbox" x:Key="s1">
+            <Style.Setters>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX ="1.5" ScaleY ="1.5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingPath Storyboard.TargetProperty="(Canvas.Left)" Duration="0:0:5" RepeatBehavior="Forever" Source="X" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimationUsingPath Storyboard.TargetProperty="(Canvas.Top)" Duration="0:0:5" RepeatBehavior="Forever" Source="Y" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" To="0.5"/>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" To="0.5"/>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" To="0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style TargetType="Viewbox" x:Key="s2">
+            <Style.Setters>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX ="1.5" ScaleY ="1.5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingPath BeginTime="0:0:1" RepeatBehavior="Forever" Storyboard.TargetProperty="(Canvas.Left)" Duration="0:0:5" Source="X" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimationUsingPath BeginTime="0:0:1" RepeatBehavior="Forever" Storyboard.TargetProperty="(Canvas.Top)" Duration="0:0:5" Source="Y" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimation BeginTime="0:0:1" Storyboard.TargetProperty="Opacity" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:1" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:1" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" To="0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Viewbox" x:Key="s3">
+            <Style.Setters>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX ="1.5" ScaleY ="1.5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingPath BeginTime="0:0:2" RepeatBehavior="Forever"  Storyboard.TargetProperty="(Canvas.Left)" Duration="0:0:5" Source="X" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimationUsingPath BeginTime="0:0:2" RepeatBehavior="Forever" Storyboard.TargetProperty="(Canvas.Top)" Duration="0:0:5" Source="Y" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimation BeginTime="0:0:2" Storyboard.TargetProperty="Opacity" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:2" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style TargetType="Viewbox" x:Key="s4">
+            <Style.Setters>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX ="1.5" ScaleY ="1.5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingPath BeginTime="0:0:3" RepeatBehavior="Forever"  Storyboard.TargetProperty="(Canvas.Left)" Duration="0:0:5" Source="X" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimationUsingPath BeginTime="0:0:3" RepeatBehavior="Forever" Storyboard.TargetProperty="(Canvas.Top)" Duration="0:0:5" Source="Y" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="Opacity" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:3" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style TargetType="Viewbox" x:Key="s5">
+            <Style.Setters>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX ="1.5" ScaleY ="1.5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingPath BeginTime="0:0:4" RepeatBehavior="Forever"  Storyboard.TargetProperty="(Canvas.Left)" Duration="0:0:5" Source="X" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimationUsingPath BeginTime="0:0:4" RepeatBehavior="Forever" Storyboard.TargetProperty="(Canvas.Top)" Duration="0:0:5" Source="Y" PathGeometry="{StaticResource ResourceKey=PathAnimation}"/>
+                            <DoubleAnimation BeginTime="0:0:4" Storyboard.TargetProperty="Opacity" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:4" Storyboard.TargetProperty="RenderTransform.ScaleX" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                            <DoubleAnimation BeginTime="0:0:4" Storyboard.TargetProperty="RenderTransform.ScaleY" Duration="0:0:2.5" AutoReverse="True" RepeatBehavior="Forever" From="1" To="0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
+    <Canvas>
+        <Path Stroke="Green" StrokeThickness="3" Data="{StaticResource ResourceKey=PathAnimation}" />
+        
+        <Viewbox Canvas.Left="-1000" Width="100" Style="{StaticResource s1}">
+            <Image Source="Resources/gopro.png"/>
+        </Viewbox>
+        
+        <Viewbox Canvas.Left="-1000" Width="100" Style="{StaticResource s2}">
+            <Image Source="Resources/iPhoneX.png"/>
+        </Viewbox>
+        
+        <Viewbox Canvas.Left="-1000" Width="100" Style="{StaticResource s3}">
+            <Image Source="Resources/monitor.png"/>
+        </Viewbox>
+        
+        <Viewbox Canvas.Left="-1000" Width="100" Style="{StaticResource s4}">
+            <Image Source="Resources/tablet.png"/>
+        </Viewbox>
+        
+        <Viewbox Canvas.Left="-1000" Width="100" Style="{StaticResource s5}">
+            <Image Source="Resources/watches.png"/>
+        </Viewbox>
+    </Canvas>
+
+</Window>
